@@ -1,0 +1,22 @@
+```mermaid
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser:Clicks link from exercise
+    browser->>server:fetch spa.html
+    note right of browser: GET request https://studies.cs.helsinki.fi/exampleapp/spa
+    server->>browser: Sends spa.html
+    note left of server: 200 Status code response
+    browser->>server:fetch main.css
+    note right of browser:GET request https://studies.cs.helsinki.fi/exampleapp/main.css
+    server->>browser:sends main.css
+    browser->>server:fetch spa.js
+    note right of browser:GET request https://studies.cs.helsinki.fi/exampleapp/spa.js
+    server->>browser:sends spa.js
+    browser->>server:fetch data.jason
+    note right of browser:AJAX request
+    server->>browser:providedata.jason
+    browser->>user:Shows notes as HTML list
+```

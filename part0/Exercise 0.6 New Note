@@ -1,0 +1,16 @@
+```mermaid
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser: Click submit button
+    browser->>server: Input as JASON to server
+    note left of browser: Add new input to notes
+    browser->>user:Refresh new list of notes
+    browser->>server: Returns use input as JASON to the server
+    note right of browser: POST request
+    note left of server: Save intput to data
+    server->browser:Sends response to browser
+    note left of server: 201 status code response
+```
